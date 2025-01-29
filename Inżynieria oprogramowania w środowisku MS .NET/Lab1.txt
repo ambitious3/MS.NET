@@ -1,0 +1,50 @@
+using System;
+
+namespace laboratorium1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Console.WriteLine("Laboratorium 1 - 21.04.2022 - 11:30-13:00");
+            Console.WriteLine("Nazwisko i imię autora: Popławski Rafał");
+            Console.WriteLine(2);
+            Console.WriteLine("2");
+            Console.WriteLine(2 + 3);
+            Console.WriteLine("2" + "3");
+            Console.WriteLine("Suma 2 + 3 =" + 2 + 3);
+            Console.WriteLine("Suma 2 + 3 =" + (2 + 3));
+            Console.WriteLine("Różnica 2 - 3 =" + (2 - 3));
+            Console.WriteLine("Iloczyn 2 * 3 =" + (2 * 3));
+            Console.WriteLine("Iloraz 2 / 3 =" + (2.0 / 3));
+            Console.WriteLine("Iloraz 2 / 3 =" + (double) 2 / (double) 3);
+
+
+            double liczba_rzeczywista = 20.5;
+
+            int liczba1 = 20;
+
+            int liczba2 = 30;
+            Console.WriteLine("Suma liczb:" + liczba1 + " + " + liczba2+" = "+(liczba1 + liczba2));
+            Console.WriteLine("Różnica liczb:" + liczba1 + " - " + liczba2 + " = " + (liczba1 - liczba2));
+            Console.WriteLine("Iloczyn liczb:" + liczba1 + " * " + liczba2 + " = " + (liczba1 * liczba2));
+            Console.WriteLine("Iloraz liczb:" + liczba1 + " / " + liczba2 + " = " + ((double)liczba1 / liczba2));
+
+            String nazwisko = "Popławski";
+            String imię = "Rafał";
+
+            Console.WriteLine("Moje nazwisko i imię:" + nazwisko + " " + imię);
+            Console.WriteLine(nazwisko);
+            Console.WriteLine(imię);
+            Console.Write(nazwisko);
+            Console.WriteLine();
+            Console.Write(imię);
+
+
+
+            Console.WriteLine("Aby zamknąć, naciśnij klawisz spacji");
+            Console.ReadKey();
+        }
+    }
+}

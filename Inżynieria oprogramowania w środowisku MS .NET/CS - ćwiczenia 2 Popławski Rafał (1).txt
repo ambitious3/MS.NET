@@ -1,0 +1,116 @@
+using System;
+
+namespace Laboratorium_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Hello World!");
+            Console.ForegroundColor = ConsoleColor.White;
+            String temat = "Console - wprowadzanie danych z klawiatury i proste algorytmy";
+            String data_zajęć = "28.04.2022 (czwartek) - godzina 8:00 - 10:15 ";
+            String autor = "Rafał Popławski";
+            String grupa = "K1";
+            Console.WriteLine(temat);
+            Console.WriteLine(data_zajęć);
+            Console.WriteLine(autor);
+            Console.WriteLine(grupa);
+            //    wprowadzanie znaków z klawiatury
+            //   Console.Write("Wprowadź dowolne znaki z klawiatury: ");
+            //   string wprow_znaki = Console.ReadLine();
+            //   Console.WriteLine("Wprowadzone znaki to: " + wprow_znaki);
+
+            //   Console.Write("Podaj dowolną liczbę: ");
+            //   double wprow_liczba = double.Parse(Console.ReadLine());
+            //   Console.WriteLine("Wprowadzona liczba to: " + wprow_liczba);
+
+            //Console.Write("Podaj promień koła: ");
+            //double promień = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Dla promienia koła: " + promień + " jego obwód równa się: " + 2 * Math.PI * promień);
+            //Console.WriteLine("Dla promienia koła: " + promień + " jego pole równa się: " +  Math.PI * Math.Pow(promień,2));
+
+            //Console.WriteLine("Podaj bok A prostokąta: ");
+            //double bok_A = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj bok B prostokąta: ");
+            //double bok_B = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Obwód =" + 2 * (bok_A + bok_B));
+
+            //if (bok_A == bok_B)
+            //    Console.WriteLine("Jest to kwadrat");
+            //else
+            //    Console.WriteLine("Jest to prostokąt");
+
+            //Console.WriteLine("Podaj liczbę A: ");
+            //double A = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj liczbę B: ");
+            //double B = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj liczbę C: ");
+            //double C = double.Parse(Console.ReadLine());
+            //if (A > B && A > C)
+            //    Console.WriteLine("Największa liczba to: " + A);
+            //else
+            //if (B > C)
+            //    Console.WriteLine("Największa liczba to: " + B);
+            //else
+            //    Console.WriteLine("Najwięsksza liczba to: " + C);
+
+            //string kom = "Największa liczba to: ";
+            //if (A > B && A > C)
+            //    Console.WriteLine(kom+ A);
+            //else
+            //if (B > C)
+            //    Console.WriteLine(kom+ B);
+            //else
+            //    Console.WriteLine(kom+ C);
+
+
+            //string kom1 = "Najmniejsza liczba to: ";
+            //if (A < B && A < C)
+            //    Console.WriteLine(kom1 + A);
+            //else
+            //if (B < C)
+            //    Console.WriteLine(kom1 + B);
+            //else
+            //    Console.WriteLine(kom1 + C);
+
+
+            //double liczba_max = Math.Max(A, Math.Max(B, C));
+
+            //Console.WriteLine("Podaj bok A trójkąta: ");
+            //double bok_A = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj bok B trójkąta: ");
+            //double bok_B = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Podaj bok C trójkąta: ");
+            //double bok_C = double.Parse(Console.ReadLine());
+            //if (bok_A > bok_B && bok_A > bok_C)
+            //    if((bok_A+bok_C)>bok_B)
+            //    Console.WriteLine("Z podanych boków można utworzyć trójkąt");
+            //else
+            //    Console.WriteLine("Z podanych boków nie można utworzyć trójkąta");
+
+            //Console.WriteLine("Wprowadzony bok A trójkąta to: " + bok_A);
+            //Console.WriteLine("Wprowadzony bok A trójkąta to: {1}", bok_A,bok_B);
+
+            Random los = new Random();
+            int liczba = los.Next(10,99);
+            Console.WriteLine("Wylosowano liczbę: " + liczba);
+            //   int liczba1 = los.Next();
+            //   Console.WriteLine("Wylosowano liczbę: " + liczba1);
+            if (liczba % 2 == 0)
+                Console.WriteLine("Wylosowana liczba {0} jest parzysta", liczba);
+            else
+                Console.WriteLine("Wylosowana liczba {0} jest nieparzysta", liczba);
+
+
+            Console.WriteLine("Koniec programu");
+            Console.Beep();
+            Console.WriteLine("Koniec zajęć");
+            Console.WriteLine("Naciśnij dowolny klawisz");
+            Console.ReadKey(); 
+        }
+    }
+}

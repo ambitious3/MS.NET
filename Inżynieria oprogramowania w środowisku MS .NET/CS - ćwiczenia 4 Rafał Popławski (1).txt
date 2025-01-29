@@ -1,0 +1,121 @@
+using System;
+
+namespace Laboratorium4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.White;
+            String temat = "Tablice jednowymiarowe, wielowymiarowe";
+            String data_zajęć = "12.05.2022 (czwartek) - godzina 8:00 - 10:15 (3g.) ";
+            String autor = "Rafał Popławski";
+            String grupa = "K1";
+            Console.WriteLine(temat);
+            Console.WriteLine(data_zajęć);
+            Console.WriteLine(autor);
+            Console.WriteLine(grupa);
+
+            int[] tablica = new int[10];
+            //tablica[0] = 123;
+            //tablica[5] = 456;
+            //tablica[30] = 222;
+            Random los = new Random();
+            for (int i = 0; i <= 9; i++) 
+            tablica[i] = los.Next(-10, 11);
+
+            Console.WriteLine("Wydruk elementów tablicy od końca");
+            for (int i=9; i>=0; i--)
+                Console.WriteLine("Element " + i + " tablicy to: " + tablica[i]);
+            Console.WriteLine("Liczba elementów w tablicy: " + tablica.Length);
+
+            Console.WriteLine("Wydruk elementów tablicy od początku");
+            for (int i = 0; i < tablica.Length; i++)
+                Console.WriteLine("Element " + i + " tablicy to: " + tablica[i]);
+
+            Console.WriteLine("Wydruk elementów tablicy od początku " + "za pomocą foreach");
+            foreach (int zm in tablica)
+                Console.WriteLine("Element tablicy to: " + zm);
+
+            int suma = 0;
+            foreach (int zm in tablica)
+                suma = suma + zm;
+            Console.WriteLine("Suma wygenerowanych liczb w tablicy to: " + suma);
+
+            Array.Sort(tablica);
+            Console.WriteLine("Tablica posortowana rosnąco: ");
+            foreach (int zm in tablica)
+                Console.WriteLine("Element tablicy to: " + zm);
+
+            Console.WriteLine("Tablica posortowana malejąco: ");
+            for (int i=tablica.Length-1; i>=0; i--)
+                Console.WriteLine("Element tablicy to: " + tablica[i]);
+
+            Console.WriteLine("Najniższy element w tablicy to:" + tablica[0]);
+            Console.WriteLine("Najwyższy element w tablicy to:" + tablica[tablica.Length-1]);
+            Console.WriteLine("Różnica pomiędzy max a min to: " + (tablica[tablica.Length - 1] - tablica[0]));
+
+            int liczba_elem_max = 1;
+            for (int i = 0; i < tablica.Length - 1; i++)
+                if (tablica[i] == tablica[tablica.Length - 1])
+                    liczba_elem_max++;
+            Console.WriteLine("Liczba wystąpień MAX to:  " + liczba_elem_max);
+
+            int[] tablica_uj = new int[tablica.Length];
+            int[] tablica_dod = new int[tablica.Length];
+            int wsk_dodatni = 0;
+
+            for (int i = 0; i < tablica.Length; i++)
+                if (tablica[i] < 0)
+                    tablica_uj[i] = tablica[i];
+                else
+                {
+                    tablica_dod[i] = tablica[i];
+                    wsk_dodatni++;
+
+                }
+            Console.WriteLine("Wydruk utworzonej tablicy ujemnej");
+            for (int i = 0; i < tablica_uj.Length; i++)
+                if (tablica_uj[i]<0)
+                Console.Write(tablica_uj[i] + ", ");
+            Console.WriteLine();
+
+
+            Console.WriteLine("Wydruk utworzonej tablicy dodatniej");
+            for (int i = 0; i < wsk_dodatni; i++)
+                Console.Write(tablica_dod[i] + ", ");
+            Console.WriteLine();
+
+            int[,] macierz = new int[10,10];
+            for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                    macierz[i, j] = los.Next(10, 99);
+
+            for (int i = 0; i < 10; i++)
+            { 
+                for (int j = 0; j < 10; j++)
+                Console.Write(macierz[i, j] + " ");
+                Console.WriteLine();
+            }
+
+
+
+
+
+            Console.WriteLine("Koniec programu");
+            // Console.Beep();
+            Console.WriteLine("Koniec zajęć");
+            Console.WriteLine("Naciśnij dowolny klawisz");
+            Console.ReadKey();
+
+
+
+
+
+        }
+    }
+}

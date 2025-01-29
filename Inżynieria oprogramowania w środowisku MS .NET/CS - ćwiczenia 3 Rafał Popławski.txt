@@ -1,0 +1,223 @@
+using System;
+
+namespace Laboratorium3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.White;
+            String temat = "Pętle (for, for each, while, do while), sterowanie"+ "(if, switch), skok";
+            String data_zajęć = "05.05.2022 (czwartek) - godzina 8:00 - 11:15 (4g.) ";
+            String autor = "Rafał Popławski";
+            String grupa = "K1";
+            Console.WriteLine(temat);
+            Console.WriteLine(data_zajęć);
+            Console.WriteLine(autor);
+            Console.WriteLine(grupa);
+            //for (int i = 1; i <= 10; i = i + 1)
+            //    Console.WriteLine("Cykl pętli numer:" + i);
+            //for (int i = 1; i <= 10; i = i * 3)
+            //    Console.WriteLine("Cykl pętli numer:" + i);
+            //for (double i = 1; i <= 10; i = i + 0.75)
+            //    Console.WriteLine("Wartość w pętli numer:" + i);
+            //for (int i = 10; i >= 0; i = i - 2)
+            //    Console.WriteLine("Cykl pętli numer:" + i);
+            Random los = new Random();
+            //for (int i = 1; i <= 10; i = i + 1)
+            //    Console.WriteLine("Pętla numer: " + i + " - wylosowano: " + los.Next(10, 100));
+            //for (int i = 1; i <= 10; i = i + 1)
+            //    Console.WriteLine("Pętla numer: " + i + " - wylosowano liczbę całkowitą: " + los.Next(10, 100)+
+            //        " wylosowano liczbę rzeczywistą: "+ Math.Round(los.NextDouble()*1000,2));
+            //int suma = 0;
+            //for (int i = 1; i <= 15; i++)
+            //{
+            //    int liczba = los.Next(100,1000);
+            //    Console.WriteLine("Wylosowana liczba: " + liczba);
+            //    suma = suma + liczba;
+            //}
+            //Console.WriteLine("Suma wylosowanych liczb całkowitych to: "+ suma);
+
+            //for (int i = 1; i <= 20; i++)
+            //{
+            //    int liczba = los.Next(-10, 10);
+            //    Console.Write("Wylosowano liczbę " + liczba + " i jest ona ");
+            //    if (liczba % 2 == 0)
+            //        Console.WriteLine("Jest ona parzysta");
+            //    else
+            //        Console.WriteLine("nieparzysta");
+            //}
+
+            //int liczba_parzystych = 0;
+            //int liczba_nieparzystych = 0;
+            //for (int i = 1; i <= 20; i++)
+            //{
+            //    int liczba = los.Next(-10, 11);
+            //    Console.Write("Wylosowano liczbę " + liczba + " i jest ona ");
+            //    if (liczba % 2 == 0)
+            //    {
+            //        Console.WriteLine("parzysta");
+            //        liczba_parzystych++;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("nieparzysta");
+            //        liczba_nieparzystych++;
+            //    }
+            //}
+            //Console.WriteLine("Liczba wylosowanych parzystych: " + liczba_parzystych);
+            //Console.WriteLine("Liczba wylosowanych nieparzystych: " + liczba_nieparzystych);
+            //Console.ForegroundColor = ConsoleColor.Red;
+            //if (liczba_parzystych == liczba_nieparzystych)
+            //    Console.WriteLine("Wylosowano taką samą liczbę parzystych i nieparzystych");
+            //else
+            //    if (liczba_parzystych < liczba_nieparzystych)
+            //    Console.WriteLine("Wylosowano więcej liczb nieparzystych");
+            //else
+            //    Console.WriteLine("Wylosowano więcej liczb parzystych");
+            //Console.ForegroundColor = ConsoleColor.White;
+
+
+            //int l_jednocyfrowe, l_dwucyfrowe, l_trzycyfrowe;
+            //l_jednocyfrowe = l_dwucyfrowe = l_trzycyfrowe = 0;
+            //Console.WriteLine("Podaj ile chcesz wylosować liczb: ");
+            //int koniec = int.Parse(Console.ReadLine());
+            //    for (int i = 1; i <= koniec; i++)
+            //{
+            //    int liczba = los.Next(0, 1000);
+            //    if (liczba < 10)
+            //        l_jednocyfrowe++;
+            //    else
+            //        if (liczba > 99)
+            //        l_trzycyfrowe++;
+            //    else
+            //        l_dwucyfrowe++;
+            //}
+            //Console.WriteLine("Liczb jednocyfrowych jest: " + l_jednocyfrowe);
+            //Console.WriteLine("Liczb dwucyfrowych jest: " + l_dwucyfrowe);
+            //Console.WriteLine("Liczb trzycyfrowych jest: " + l_trzycyfrowe);
+
+            //Console.WriteLine("Podaj ile chcesz sprawdzić trójkątów: ");
+            //int koniec = int.Parse(Console.ReadLine());
+
+            //int liczba_utworzonych = 0;
+            //for (int i=1; i<=koniec; i++)
+            //{
+            //    int a = los.Next(1, 10);
+            //    int b = los.Next(1, 10);
+            //    int c = los.Next(1, 10);
+            //    string komunikat1 = "można utworzyć trójkąt";
+            //    string komunikat2 = "nie " + komunikat1 + "a";
+            //    string kom_wynik;
+            //    if (a > b && a > c)
+            //        if (a < b + c)
+            //        {
+            //            kom_wynik = komunikat1;
+            //            liczba_utworzonych++;
+            //        }
+            //        else
+            //            kom_wynik = komunikat2;
+            //    else
+            //        if (b > c)
+            //        if (b < a + c)
+            //        {
+            //            kom_wynik = komunikat1;
+            //            liczba_utworzonych++;
+            //        }
+            //        else
+            //            kom_wynik = komunikat2;
+            //    else
+            //        if (c < a + b)
+            //    {
+            //        kom_wynik = komunikat1;
+            //        liczba_utworzonych++;
+            //    }
+            //    else
+            //        kom_wynik = komunikat2;
+            //    Console.WriteLine("Trójkąt " + i + " dla boków a = " + b +
+            //        " b = " + b + " c = " + c + " " + kom_wynik);
+
+
+
+            //}
+
+            //Console.WriteLine("Utworzono " + liczba_utworzonych + "trójkątów ");
+            //Console.WriteLine("Nie utworzono " + (koniec - liczba_utworzonych) + "trójkątów ");
+
+            Console.WriteLine("Podaj ile chcesz wylosować cyfr: ");
+            int koniec = int.Parse(Console.ReadLine());
+            int l0, l1, l2, l3, l4, l5, l6, l7, l8, l9,linne;
+            l0=l1=l2=l3=l4=l5=l6=l7=l8=l9=linne=0;
+            int mniejsze5, rowne5, wieksze5;
+            mniejsze5 = rowne5 = wieksze5 = 0;
+            for (int i=1; i<=koniec; i++)
+            {
+                int liczba = los.Next(0, 15);
+                Console.Write(liczba + ", ");
+                switch(liczba)
+                {
+                    case 0:
+                        l0++; break;
+                    case 1:
+                        l1++; break;
+                    case 2:
+                        l2++; break;
+                    case 3:
+                        l3++; break;
+                    case 4:
+                        l4++; break;
+                    case 5:
+                        l5++; break;
+                    case 6:
+                        l6++; break;
+                    case 7:
+                        l7++; break;
+                    case 8:
+                        l8++; break;
+                    case 9:
+                        l9++; break;
+                    default:
+                        linne++; break;
+                    
+                }
+              
+            }
+            Console.WriteLine();
+            Console.WriteLine("liczba zer " + l0);
+            Console.WriteLine("liczba jedynek " + l1);
+            Console.WriteLine("liczba dwójek " + l2);
+            Console.WriteLine("liczba trójek " + l3);
+            Console.WriteLine("liczba czwórek " + l4);
+            Console.WriteLine("liczba piątek " + l5);
+            Console.WriteLine("liczba szóstek " + l6);
+            Console.WriteLine("liczba siódemek " + l7);
+            Console.WriteLine("liczba ósemek " + l8);
+            Console.WriteLine("liczba dziewiątek " + l9);
+            Console.WriteLine("liczba innych " + linne);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            Console.WriteLine("Koniec programu");
+            // Console.Beep();
+            Console.WriteLine("Koniec zajęć");
+            Console.WriteLine("Naciśnij dowolny klawisz");
+            Console.ReadKey();
+        }
+    }
+}

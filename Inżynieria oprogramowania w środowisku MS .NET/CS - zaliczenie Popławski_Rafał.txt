@@ -1,0 +1,148 @@
+using System;
+
+namespace Zaliczenie_MSNET
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Linia();
+            Info();
+            Linia1();
+            Console.Write("Ponieważ występuje tutaj losowanie musisz potwierdzić że masz skończone 18 lat. Wpisz swój wiek: ");
+            double wprow_liczba = double.Parse(Console.ReadLine());
+            Console.WriteLine("Wprowadzona liczba to: " + wprow_liczba);
+            { 
+            if (wprow_liczba < 18)
+            
+                return;
+            }
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Skoro masz skończone 18 lat możesz przystąpić do losowania. Jak masz na imię?");
+            string imię = Console.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"Powodzenia {imię}, miło Cię tutaj widzieć! ");
+            Console.ResetColor();
+
+            Random random = new Random();
+            int dobra_liczba = random.Next(1,11);
+
+            bool dobra_odpowiedz = false;
+            Console.WriteLine("Sprawdzimy twoje szczęście. Proszę spróbuj odgadnąć liczbę z puli (1-10): ");
+            Console.ResetColor();
+
+            while(!dobra_odpowiedz)
+            {
+                string input = Console.ReadLine();
+
+                int odgadnij;
+
+                bool isNumber = int.TryParse(input, out odgadnij);
+
+                if(!isNumber)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Proszę wprowadzić liczbę!");
+                    Console.ResetColor();
+                    continue;                    
+                }
+
+                if(odgadnij < 1 || odgadnij >10)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Proszę wprowadzić liczbę z przedziału od (1-10)");
+                    Console.ResetColor();
+                    continue;                    
+                }
+
+                if(odgadnij < dobra_liczba)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Zły wybór. Wylosowana liczba jest większa");
+                    Console.ResetColor();
+                }
+                else if (odgadnij > dobra_liczba)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine("Zły wybór. Wylosowana liczba jest mniejsza");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    dobra_odpowiedz = true;
+                    Console.WriteLine("BRAWO, prawidłowa odpowiedź!");
+                    Console.ResetColor();
+                }
+            }
+            
+            
+            
+
+
+            Koniec();
+
+
+
+
+
+            
+        }
+
+
+
+                static void Linia()
+
+                {
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    for (int i = 1; i <= 60; i++)
+
+                        Console.Write("ˇ");
+
+                    Console.WriteLine();
+
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                }
+        static void Linia1()
+
+        {
+
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            for (int i = 1; i <= 60; i++)
+
+                Console.Write("ˆ");
+
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+        static void Koniec()
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine("Mam nadzieję, że szczęście dziś dopisuje. Możesz pochwalić się w ilu próbach" +
+                " udało Ci się odgadnąć liczbę: ");
+            double ile = double.Parse(Console.ReadLine());
+            Console.WriteLine(ile+" to całkiem niezły wynik :)");
+            // Console.Beep();
+            Console.WriteLine("Ponieważ jest to koniec programu, naciśnij proszę dowolny przycisk, aby zamknąć program.");
+            Console.ReadKey();
+        }
+        static void Info()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            String temat = "Projekt zaliczeniowy - losowanie";
+            String autor = "Rafał Popławski 81659";
+            String grupa = "K1";
+            Console.WriteLine(temat);
+            Console.WriteLine(autor);
+            Console.WriteLine(grupa);
+            Console.WriteLine(" ");
+            Console.ResetColor();
+        }
+    }
+}

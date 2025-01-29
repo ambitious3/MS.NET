@@ -1,0 +1,159 @@
+using System;
+
+namespace Laboratorium5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Inicjuj_ekran();          
+            Opis_zajęć();
+            Linia();
+            Dodaj();
+            Mnożenie();
+            Mnożenie(123, 235);
+            Mnożenie(-34, 45);
+            int a = 23;
+            int b = 67;
+            Mnożenie(a, b);
+            Console.WriteLine("Liczba a = " + a + "Liczba b = "+ (a + b));
+            Mnożenie(20, 30, 40);
+
+            Console.WriteLine(Dodaj_1());
+            Console.WriteLine(Dodaj_2());
+            Linia();
+            Console.WriteLine(Dodaj_2());
+            Linia();
+
+            a = 111;
+            b = 222;
+            string znak = "-";
+            Console.WriteLine(Kalkulator(a, znak, b));
+
+            Linia();
+            int bokA = 10;
+            int bokB = 20;
+            int bokC = 40;
+            Console.WriteLine(Jaka_figura(bokA, bokB, bokC));
+            Linia();
+
+
+            Koniec_programu();
+            
+        static string Jaka_figura(int a, int b, int c)
+            {
+                Console.WriteLine("Dla podanych boków: " + a + ", " + b + ", " + c);
+                string znaki = "Utworzony zostanie ";
+                if (a == b && b == c)
+                    return znaki+"Jest to sześcian";
+                else
+                    return znaki+"porstopadłościan";
+            }
+
+
+        }
+        static string Kalkulator(int a, string znak, int b)
+        {
+            Console.WriteLine("Dla liczby a = " + a + " b = " + b + " i znaku " + znak);
+            if (znak == "+")
+                return "Suma = " + (a + b);
+            else
+            if (znak == "-")
+                return "Różnica = " + (a - b);
+            else
+            if (znak == "*")
+                return "Iloczyn = " + (a * b);
+            else
+            if (znak == "/")
+                return "Iloraz = " + (a / b);
+            else
+                return "Błąd!";
+        }
+        static void Inicjuj_ekran()
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Hello World!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Linia();
+        }
+        static void Mnożenie(int a, int b)
+        {
+            Console.WriteLine("Iloczyn liczb " + a + " * " + b + " = " + (a * b));
+            Linia();
+          //  a = 12345;
+          //  b = 45678;
+        }
+        static void Mnożenie(int a, int b, int c)
+        {
+            Console.WriteLine("Iloczyn liczb " + a + " * " + b +" * " +c+ "="  +  (a * b*c));
+            Linia();
+            //  a = 12345;
+            //  b = 45678;
+        }
+
+        static int Dodaj_1()
+        {
+            int a = 25;
+            int b = 35;
+            Console.WriteLine("a = " + a + " b = " + b);
+            return a + b;
+        }
+
+        static string Dodaj_2()
+        {
+            int a = 25;
+            int b = 35;
+            Console.WriteLine("a = " + a + " b = " + b);
+            return "################################## \nSuma liczb a  "+a+" + b  "+b+" = "+(a+b)
+                +"\n##################################";
+        }
+
+
+
+
+        static void Linia()
+        {
+            Console.ForegroundColor = ConsoleColor.Black;
+            for (int i = 1; i <= 60; i++)
+                Console.Write("=");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        static void Mnożenie()
+        {
+            int a = 2;
+            int b = 3;
+            Console.WriteLine("Iloczyn liczb " + a + " * " + b + " = " + (a * b));
+            
+        }
+        static void Dodaj()
+        {
+            int a = 2;
+            int b = 3;
+            Console.WriteLine("Suma liczb " + a + " + " + b + " = " + (a + b));
+        }
+        static void Opis_zajęć()
+        {
+            String temat = "Funkcje (metody)";
+            String data_zajęć = "19.05.2022 (czwartek) - godzina 8:00 - 10:15 (3g.) ";
+            String autor = "Rafał Popławski";
+            String grupa = "K1";
+
+            Console.WriteLine(autor);
+            Console.WriteLine(grupa);
+            Console.WriteLine(temat);
+            Console.WriteLine(data_zajęć);
+        }
+        static void Koniec_programu()
+        {
+            Console.WriteLine("Koniec programu");
+            // Console.Beep();
+            Console.WriteLine("Koniec zajęć");
+            Console.WriteLine("Naciśnij dowolny klawisz");
+            Console.ReadKey();
+        }
+    }
+
+}

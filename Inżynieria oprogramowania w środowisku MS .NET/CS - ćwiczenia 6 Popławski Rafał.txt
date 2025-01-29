@@ -1,0 +1,170 @@
+using System;
+
+namespace Laboratorium6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Inicjuj_ekran();
+            Opis_zajęć();
+            Linia();
+            // Przetwarzanie_tekstu();
+            // Przetwarzanie_tekstu_1();
+            Przetwarzanie_tekstu_2();
+            Koniec_programu();
+        }
+
+        static void Przetwarzanie_tekstu_2()
+        {
+            string[] tablica_znaków = { "Wyższa", "Szkoła", "Biznesu" };
+            Console.WriteLine(tablica_znaków[0]);
+            Console.WriteLine(tablica_znaków[1]);
+            Console.WriteLine(tablica_znaków[2]);
+            Console.WriteLine("Roziwązanie I");
+            Console.WriteLine(tablica_znaków[0].Substring(0, 1) + tablica_znaków[1].Substring(0, 1)
+                + tablica_znaków[2].Substring(0, 1));
+            Console.WriteLine("Roziwązanie II");
+            for (int i = 0; i < tablica_znaków.Length; i++)
+                Console.Write(tablica_znaków[i].Substring(0, 1));
+            Console.WriteLine();
+            Console.WriteLine(String.Join(" - ", tablica_znaków));
+
+            string s1 = "Wyższa Szkoła Biznesu Wrocław ulica Fabryczna";
+            string[] tablica_wynik = s1.Split(new char[] { ' ' });
+            for (int i = 0; i < tablica_wynik.Length; i++)
+                Console.WriteLine(tablica_wynik[i]);
+            foreach(string wyraz in tablica_wynik)
+            Console.WriteLine(wyraz);
+
+            string s3 = "Jesteśmy w budynku uczelni o oznaczeniu B";
+            Console.WriteLine("Badany tekst {0} ", s3);
+            if (s3.Contains("u"))
+                Console.WriteLine("Badany tekst zawiera literę \"u\"");
+            else
+                Console.WriteLine("Badany tekst nie zawiera litery \"u\"");
+            Console.WriteLine("Litera \"u\" występuje na pozycji: ");
+            for (int i = 0; i < s3.Length; i++) 
+                if (s3.Substring(i, 1) == "u")
+                    Console.WriteLine((i + 1) + ", ");
+            Console.WriteLine();
+
+        }
+        static void Przetwarzanie_tekstu_1()
+        {
+            string s1 = "We Wrocławiu jest pochmurna pogoda";
+            Console.WriteLine("Przetwarzany tekst to:" + s1);
+            for (int i = 0; i < s1.Length; i++)
+                Console.Write(s1.Substring(i, 1)+"#");
+            Console.WriteLine();
+
+            for (int i=s1.Length-1; i>=0;i--)
+                Console.Write(s1.Substring(i, 1));
+            Console.WriteLine();
+
+            int liczba_wyrazów = 0;
+            for (int i = 0; i < s1.Length; i++)
+                if (s1.Substring(i, 1) == " ")
+                    liczba_wyrazów++;
+            Console.WriteLine("Liczba wyrazów w tekście " + (liczba_wyrazów+1));
+
+            Console.WriteLine("Wielkie litery w tekście");
+            int licz_wielkie = 0;
+            for (int i = 0; i < s1.Length; i++)
+                if (s1.Substring(i, 1) != " ")
+                    if (s1.Substring(i, 1) == s1.Substring(i, 1).ToUpper())
+                    {
+                        Console.Write(s1.Substring(i, 1) + ", ");
+                        licz_wielkie++;
+                    } 
+            Console.WriteLine();
+            Console.WriteLine("Liczba wielkich liter: " + licz_wielkie);
+
+            string s2 = "     Karol    ";
+            Console.WriteLine("#" + s2 + "#");
+            Console.WriteLine("#" + s2.Trim() + "#");
+            Console.WriteLine("#" + s2.TrimEnd() + "#");
+            Console.WriteLine("#" + s2.TrimStart() + "#");
+
+        }
+
+        static void Przetwarzanie_tekstu()
+        {
+            string s1, s2;
+            s1 = "Czwartek";
+            s2 = "czwartek";
+            Console.WriteLine("Ciągi znaków na wejściu: \n" + s1 + ",\n" + s2);
+            Console.WriteLine("Porównanie sposób I");
+            if (s1 != s2)
+                Console.WriteLine("Podane ciągi znaków są różne");
+            else
+                Console.WriteLine("Podane ciągi znaków są takie same");
+
+            Console.WriteLine("Porównanie sposób II");
+
+            if (s1 == s2)
+                Console.WriteLine("Podane ciągi znaków są takie same");
+            else
+                Console.WriteLine("Podane ciągi znaków są różne");
+
+            Console.WriteLine("Porównanie sposób III");
+
+            if (s1.Equals(s2))
+                Console.WriteLine("Podane ciągi znaków są takie same");
+            else
+                Console.WriteLine("Podane ciągi znaków są różne");
+
+            string s3 = "Dzisiaj jest czwartek   ";
+            Console.WriteLine("Badany ciąg znaków: {0}", s3);
+            if (s3.Contains("jest"))
+                Console.WriteLine("W badanym ciągu istnieje słowo \"jest\"");
+            else
+                Console.WriteLine("W badanym ciągu nie istnieje słowo \"jest\"");
+            Console.WriteLine("Badany ciąg składa się z " + s3.Length);
+
+            string s4 = "JeSTEśmy na zajęciach z C#";
+            Console.WriteLine("Tekst WE:" + s4);
+            Console.WriteLine(s4.Insert(24, "języka programowania "));
+
+            Console.WriteLine("Pierwszy znak w ciągu to: " + s4.Substring(0, 1));
+            Console.WriteLine("Badamy tekst wielkimi literami " + s4.ToUpper());
+            Console.WriteLine("Badamy tekst małymi literami " + s4.ToLower());
+        }
+        static void Inicjuj_ekran()
+        {
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
+            Linia();
+        }
+        static void Linia()
+        {
+            Console.ForegroundColor = ConsoleColor.Black;
+            for (int i = 1; i <= 60; i++)
+                Console.Write("=");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        static void Opis_zajęć()
+        {
+            String temat = ("łańcuchy, listy");
+            String data_zajęć = "ST - zajęcia 26.05.2022 (czwartek) - godzina 8:00 - 10:15 (3g.) ";
+            String autor = "Rafał Popławski";
+            String grupa = "K1";
+
+            Console.WriteLine(autor);
+            Console.WriteLine(grupa);
+            Console.WriteLine(temat);
+            Console.WriteLine(data_zajęć);
+        }
+        static void Koniec_programu()
+        {
+            Console.WriteLine("Koniec programu");
+            // Console.Beep();
+            Console.WriteLine("Koniec zajęć");
+            Console.WriteLine("Naciśnij dowolny klawisz");
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,187 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace lab7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Inicjuj_ekran();
+            Opis_zajęć();
+            Linia();
+            Lista_niegeneryczna();
+            Linia();
+            Lista_generyczna();
+            Linia();
+            Koniec_programu();
+        }
+        
+
+        static void Lista_niegeneryczna()
+        {
+            ArrayList Lista_niegeneryczna = new ArrayList();
+            Lista_niegeneryczna.Add(2);
+            Lista_niegeneryczna.Add("2");
+            Lista_niegeneryczna.Add("Karol");
+            Lista_niegeneryczna.Add(10);
+            Lista_niegeneryczna.Add("Czerwiec");
+            Lista_niegeneryczna.Add(2);
+            Console.WriteLine("Liczba elementów na liście: " + Lista_niegeneryczna.Count);
+            //for (int i = 0; i < Lista_niegeneryczna.Count; i++)
+            //   Console.WriteLine(Lista_niegeneryczna[i]);
+            foreach (var element in Lista_niegeneryczna)
+                Console.WriteLine(element);
+            Lista_niegeneryczna.Insert(1, "111111");
+            foreach (var element in Lista_niegeneryczna)
+                Console.WriteLine(element);
+            Linia();
+            //Lista_niegeneryczna.Remove(2);
+            //foreach (var element in Lista_niegeneryczna)
+            //    Console.WriteLine(element);
+            //Linia();
+            //Lista_niegeneryczna.Remove(2);
+            //Lista_niegeneryczna.RemoveAt(0);
+            //foreach (var element in Lista_niegeneryczna)
+            //    Console.WriteLine(element);
+            //Lista_niegeneryczna.RemoveRange(0,3);
+            Lista_niegeneryczna.Reverse();
+            foreach (var element in Lista_niegeneryczna)
+                Console.WriteLine(element);
+            Console.WriteLine(Lista_niegeneryczna.Contains("Karol"));
+            Console.WriteLine(Lista_niegeneryczna.IndexOf(2));
+            Console.WriteLine(Lista_niegeneryczna.LastIndexOf(2));
+            Lista_niegeneryczna.Remove("2");
+            Lista_niegeneryczna.ToString();
+            foreach (var element in Lista_niegeneryczna)
+                Console.WriteLine(element);
+
+        } 
+        static void Lista_generyczna()
+        {
+            List<string> lista_gen = new List<string>();
+            lista_gen.Add("Poniedziałek");
+            lista_gen.Add("Środa");
+            lista_gen.Add("Piątek");
+            lista_gen.Add("Sobota");
+            foreach(string element in lista_gen)
+            {
+                Console.WriteLine(element);
+            }
+            lista_gen.Add("Niedziela");
+            lista_gen.Insert(1, "Wtorek");
+            lista_gen.Insert(3, "Czwartek");
+            foreach(string element in lista_gen)
+            {
+                Console.WriteLine(element);
+            }
+            for (int i=0; i<lista_gen.Count; i++)
+                if (lista_gen[0] == "czwartek")
+                    lista_gen[0] = "Czwartek";
+
+            
+        }
+        static void Lista()
+        {
+            List<int> Lista = new List<int>();
+            Lista.Add(1);
+            Lista.Add(2);
+            int test = Lista[0] + Lista[1];
+            Console.WriteLine(test);
+            Lista.Count();
+            Linia();
+            int[] tablica = new int[Lista.Count];
+            for (int i=0; i< Lista.Count;i++)
+            {
+                tablica[i] = Lista[i];
+                Console.WriteLine(tablica[i]);
+            }
+
+            
+            
+        }
+
+        //static void druk_listy()
+        //{
+        //   foreach (var element in Lista_niegeneryczna)
+        //       Console.WriteLine(element);
+        //}
+
+
+
+
+
+        static void Inicjuj_ekran()
+
+        {
+
+            Console.BackgroundColor = ConsoleColor.Blue;
+
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+            Linia();
+
+        }
+
+        static void Linia()
+
+        {
+
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            for (int i = 1; i <= 60; i++)
+
+                Console.Write("=");
+
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+
+        static void Opis_zajęć()
+
+        {
+
+            String temat = ("Kolekcje, listy, wielkie liczby");
+
+            String data_zajęć = "ST - zajęcia 02.06.2022 (czwartek) - godzina 8:00 - 10:15 (3g.) ";
+
+            String autor = "Rafał Popławski";
+
+            String grupa = "K1";
+
+
+
+            Console.WriteLine(autor);
+
+            Console.WriteLine(grupa);
+
+            Console.WriteLine(temat);
+
+            Console.WriteLine(data_zajęć);
+
+        }
+
+        static void Koniec_programu()
+
+        {
+
+            Console.WriteLine("Koniec programu");
+
+            // Console.Beep();
+
+            Console.WriteLine("Koniec zajęć");
+
+            Console.WriteLine("Naciśnij dowolny klawisz");
+
+            Console.ReadKey();
+        }
+        
+    }
+}
